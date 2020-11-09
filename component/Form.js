@@ -1,5 +1,5 @@
 import React from 'react';
-import useForm from '../useForm';
+import useTodo from '../useTodo';
 import {Switch, Route} from "react-router-dom";
 import Home from './Home';
 import Active from './Active';
@@ -7,7 +7,7 @@ import Completed from './Completed';
 
 function Form() {
 
-  const [todo, todos, handleChange, handleSubmit, toggleTodo] = useForm();
+  const [todo, todos, handleChange, handleSubmit, toggleTodo] = useTodo();
 
   return (
     <div>

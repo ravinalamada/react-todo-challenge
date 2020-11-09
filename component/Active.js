@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import useForm from '../useForm'
+import React from 'react';
 
 function Active({todo, toggleTodo}) {
   console.log(todo);

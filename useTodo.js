@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function useForm() {
+function useTodo() {
 
   const [todo, setTodo] = useState('');
   const [todos, setTodos] = useState([]);
@@ -35,15 +35,8 @@ function useForm() {
     setTodos(updatedTodos);
   };
 
-  // function fielteredActive(todoChecked) {
-  //   const showActiveTodos = todos
-  //     .filter(todo => todo.checked === true)
-  //     .map(todo => <h3>{todo.text}</h3>)
-  //   setTodos(showActiveTodos);
-  // }
-
   return [todo, todos, handleChange, handleSubmit, toggleTodo]
 
 }
 
-export default useForm;
+export default useTodo;

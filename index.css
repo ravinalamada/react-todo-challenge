@@ -24,9 +24,14 @@ main {
   border-bottom: 2px solid gray;
 }
 
+.link,
+.submit,
+label {
+  color: #f3d2c1;
+}
+
 .link {
   text-decoration: none;
-  color: #f3d2c1;
   font-size: 32px;
 }
 
@@ -82,7 +87,6 @@ main {
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 20px;
-  color: #f3d2c1;
   text-transform: uppercase;
   font-size: 24px;
 }
@@ -93,9 +97,18 @@ main {
 
 label {
   font-size: 20px;
-  color: #f3d2c1;
 }
 
 .completed--todo {
   text-decoration: line-through;
 }
+
+@media (min-width: 1000px) {
+
+  main {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+

@@ -33853,7 +33853,7 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"useForm.js":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"useTodo.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33893,7 +33893,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function useForm() {
+function useTodo() {
   var _useState = (0, _react.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
       todo = _useState2[0],
@@ -33932,17 +33932,11 @@ function useForm() {
     setTodos(updatedTodos);
   }
 
-  ; // function fielteredActive(todoChecked) {
-  //   const showActiveTodos = todos
-  //     .filter(todo => todo.checked === true)
-  //     .map(todo => <h3>{todo.text}</h3>)
-  //   setTodos(showActiveTodos);
-  // }
-
+  ;
   return [todo, todos, handleChange, handleSubmit, toggleTodo];
 }
 
-var _default = useForm;
+var _default = useTodo;
 exports.default = _default;
 },{"react":"node_modules/react/index.js"}],"component/Home.js":[function(require,module,exports) {
 "use strict";
@@ -33979,15 +33973,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
-
-var _useForm = _interopRequireDefault(require("../useForm"));
+var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function Active(_ref) {
   var todo = _ref.todo,
@@ -34005,7 +33993,7 @@ function Active(_ref) {
 
 var _default = Active;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../useForm":"useForm.js"}],"component/Completed.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"component/Completed.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34042,7 +34030,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _useForm3 = _interopRequireDefault(require("../useForm"));
+var _useTodo3 = _interopRequireDefault(require("../useTodo"));
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -34067,13 +34055,13 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Form() {
-  var _useForm = (0, _useForm3.default)(),
-      _useForm2 = _slicedToArray(_useForm, 5),
-      todo = _useForm2[0],
-      todos = _useForm2[1],
-      handleChange = _useForm2[2],
-      handleSubmit = _useForm2[3],
-      toggleTodo = _useForm2[4];
+  var _useTodo = (0, _useTodo3.default)(),
+      _useTodo2 = _slicedToArray(_useTodo, 5),
+      todo = _useTodo2[0],
+      todos = _useTodo2[1],
+      handleChange = _useTodo2[2],
+      handleSubmit = _useTodo2[3],
+      toggleTodo = _useTodo2[4];
 
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("form", {
     className: "form",
@@ -34117,7 +34105,7 @@ function Form() {
 
 var _default = Form;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../useForm":"useForm.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Home":"component/Home.js","./Active":"component/Active.js","./Completed":"component/Completed.js"}],"component/Links.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../useTodo":"useTodo.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Home":"component/Home.js","./Active":"component/Active.js","./Completed":"component/Completed.js"}],"component/Links.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34214,7 +34202,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63471" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64027" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
